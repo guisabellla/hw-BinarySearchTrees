@@ -131,13 +131,9 @@ def test__BST___contains__2(xs):
     Checks that if a value is NOT in the bst then __contains__ returns False
     '''
     xs = list(set(xs))
-    if len(xs)>0:
-        while True:
-            x = random.uniform(min(xs)-1,max(xs)+1)
-            if x not in xs:
-                break
-    else:
-        x = 10
+    x = 0
+    while x in xs:
+        x += 1
     bst = BST(xs)
     assert x not in bst
 
