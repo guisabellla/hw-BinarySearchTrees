@@ -27,3 +27,27 @@ def range(a, b=None, c=None):
     Carefully written C code can be faster than the corresponding python code because it can remove some of the overhead of this automation process,
     but the resulting code is much longer and harder to read/write.
     '''
+    if b is None:
+        start = 0
+        stop = a
+        step = 1
+    elif c is None:
+        start = a
+        stop = b
+        step = 1
+    else:
+        start = a
+        stop = b
+        step = c
+
+    if step == 0:
+        raise ValueError
+
+    if step > 0:
+        while start < stop:
+            yield start
+            start += step
+    else:
+        while start > stop:
+            yield start
+            start += step

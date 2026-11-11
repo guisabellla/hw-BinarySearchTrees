@@ -204,6 +204,8 @@ class BinaryTree():
         if a right child exists, calculate the _height of the right child;
         return 1 (for the current node) plus the max of the left and right _heights calculated above
         '''
+        if node is None:
+            return -1
         left_height = -1
         right_height = -1
         if node.left:
